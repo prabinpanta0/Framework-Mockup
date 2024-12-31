@@ -1,0 +1,34 @@
+/**
+ * Place your custom CSS styles here.
+ **/
+
+
+
+@font-face {
+    font-family: 'Arial';
+    src: local('Arial'), local('Arial-Regular');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+/* Apply new font family to all DOM elements */
+
+* {
+ font-family: redactedregular !important;
+}
+
+
+
+
+/* Change background images of all elements that we found to have a background image */
+/* we added them this class - "bg_found" */
+/* to have a background color */
+
+.bg_found {
+  background-image: none !important;
+  background-color: #808080 !important;
+}
