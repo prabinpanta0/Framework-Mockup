@@ -20,23 +20,40 @@
   var loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 
   for (var i = 0; i < paragraphs.length; i++) {
-    paragraphs[i].textContent = loremIpsum;
+    var originalText = paragraphs[i].textContent;
+    paragraphs[i].textContent = loremIpsum.substring(0, originalText.length);
   }
 
   // change all text headers to random lorem ipsum text headers
   var headers = document.getElementsByTagName('h1');
   for (var i = 0; i < headers.length; i++) {
-    headers[i].textContent = "Lorem Ipsum";
+    var originalText = headers[i].textContent;
+    headers[i].textContent = loremIpsum.substring(0, originalText.length);
+  }
+
+  // label to lorem ipsum
+  var labels = document.getElementsByTagName('label');
+  for (var i = 0; i < labels.length; i++) {
+    var originalText = labels[i].textContent;
+    labels[i].textContent = loremIpsum.substring(0, originalText.length);
   }
 
   headers = document.getElementsByTagName('h2');
   for (var i = 0; i < headers.length; i++) {
-    headers[i].textContent = "Lorem Ipsum";
+    var originalText = headers[i].textContent;
+    headers[i].textContent = loremIpsum.substring(0, originalText.length);
+  }
+
+  var textfields = document.getElementsByTagName('input');
+  for (var i = 0; i < textfields.length; i++) {
+    var originalPlaceholder = textfields[i].placeholder;
+    textfields[i].placeholder = loremIpsum.substring(0, originalPlaceholder.length);
   }
 
   headers = document.getElementsByTagName('h3');
   for (var i = 0; i < headers.length; i++) {
-    headers[i].textContent = "Lorem Ipsum";
+    var originalText = headers[i].textContent;
+    headers[i].textContent = loremIpsum.substring(0, originalText.length);
   }
 
   // change all lists to lorem ipsum lists
@@ -47,11 +64,12 @@
       listItems[j].textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
     }
   }
-
-  // change other text elements to lorem ipsum
+  // change other text elements to lorem ipsum with the same length as original text
   var textElements = document.getElementsByTagName('span');
   for (var i = 0; i < textElements.length; i++) {
-    textElements[i].textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+    var originalText = textElements[i].textContent;
+    var loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+    textElements[i].textContent = loremIpsum.substring(0, originalText.length);
   }
 
   // change all divs to have a border
@@ -73,6 +91,15 @@
     img.src = 'http://placehold.it/40';
     img.alt = 'Wireframe Image';
     svgs[i].parentNode.replaceChild(img, svgs[i]);
+  }
+
+  // change iframe tag to img and src to http://placehold.it/400
+  var iframes = document.getElementsByTagName('iframe');
+  for (var i = 0; i < iframes.length; i++) {
+    var img = document.createElement('img');
+    img.src = 'http://placehold.it/400';
+    img.alt = 'Wireframe Image';
+    iframes[i].parentNode.replaceChild(img, iframes[i]);
   }
 
   // change all colors to black
